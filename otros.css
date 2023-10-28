@@ -446,6 +446,18 @@ footer a {
         margin-right: 8vw;
         margin-bottom: 3vw;
     }
+    .linea-roja {
+        position: relative;
+      }
+      
+      .linea-roja::before {
+        content: '';
+        position: absolute;
+        top: 50%; /* Ubica la línea en la mitad vertical del texto */
+        width: 31%;
+        height: 1px; /* Ancho y grosor de la línea */
+        background: red; /* Color de la línea */
+      }
      
      /* Estilos del pie de página */
      footer {
