@@ -1,0 +1,355 @@
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #fff700;
+    color: #fff;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburguer-button {
+    /* background-color: blueviolet; */
+    color: blueviolet;
+    display: block;
+    width: 10%;
+    height: 9%;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 7vw;
+   
+}
+
+.logo{
+    width: 22%;
+    position: relative;
+    right: 1.5vw;
+    bottom: 2vw;
+    
+}
+
+.hamburguesa-logo-buscar{
+    display:contents;
+}
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+ #search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left:1.5vw;
+
+} 
+
+#buscador {
+    padding: 5px;
+    border: 15px;
+    border-radius: 5px;
+    width: 42vw;
+    height: 7vw;
+    font-size: 3vw;
+    position: relative;
+    right: 2vw;
+   
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    height: 7vw;
+    font-size: 3vw;
+    position: relative;
+    right: 3vw;
+}
+
+.main-navbar{
+    display:none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 20px;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer li {
+    margin: 0 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilos de las cajas de productos (utilizando Bootstrap) */
+.col-md-4 {
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos específicos para las cajas de productos según tus necesidades */
+@media (min-width: 481px) {
+    
+    .container {
+        margin-top: 20px;
+    }
+    
+    /* Estilos del encabezado */
+    header {
+        background-color: #fff700;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 20vw;
+        width: 100%;
+    }
+    
+    .hamburguer-button {
+            display:none;
+        }
+
+    
+    .logo{
+        width: 22%;
+        position: relative;
+        left:3vw;
+        bottom: 2vw;
+        
+    }
+    
+    .hamburguesa-logo-buscar{
+        display:contents;
+    }
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+    }
+    
+    .buscar-boton {
+        display: flex;
+        align-items: center;
+        position: relative;
+        right:20vw;
+        
+    
+    } 
+    
+    #buscador {
+        padding: 5px;
+        border: 15px;
+        border-radius: 5px;
+        width: 45vw;
+        height: 7.5vw;
+        font-size: 3vw;
+        position:relative;
+        right: 6vw;
+    }
+    
+    button[type="submit"] {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-left: 5px;
+        cursor: pointer;
+        height: 7.5vw;
+        font-size: 3vw;
+        position:relative;
+        left: -10vw;
+    }
+    
+    .main-navbar {
+        display: flex;
+        justify-content:center;
+        
+       
+    }
+    .main-navbar a{
+        color: #0031e0;
+        font-weight: normal;
+    }
+
+    nav {
+        display: none; /* Ocultar el menú de navegación en pantallas pequeñas */
+        /* background-color: #333; */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        z-index: 2;
+        
+      
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        width: ;
+
+    }
+    
+    nav li {
+        margin-right: 20px;
+    }
+    
+    nav a {
+        text-decoration: none;
+       
+        font-weight: bold;
+    }
+    
+    /* Estilos del contenido principal */
+    main {
+        padding: 20px;
+    }
+    
+    /* Estilos del pie de página */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    footer img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    footer ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    footer li {
+        margin: 0 10px;
+    }
+    
+    footer a {
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    /* Estilos de las cajas de productos (utilizando Bootstrap) */
+    .col-md-4 {
+        padding: 15px;
+        margin-bottom: 20px;
+        background-color: #faf9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+
+
+/* Mostrar el botón hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        display: none; /* Ocultar el menú de navegación en pantallas pequeñas */
+        /* background-color: #333; */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        z-index: 2;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
