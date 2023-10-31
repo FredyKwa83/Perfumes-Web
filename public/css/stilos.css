@@ -164,6 +164,21 @@ footer a {
     text-decoration: none;
     color: #fff;
 }
+.main-edit{
+    font-size: 5vw;
+    text-align:left;
+    font-weight: 2vw;
+    padding-bottom: 3vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+.main-titulo-edit{
+    padding-top: 4vw;
+    font-size: 6vw;
+    text-align:center;
+    line-height: 1em;
+    padding-bottom: 5vw;
+}
 
 
 @media (min-width: 481px) {
