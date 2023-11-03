@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head.ejs",{title:"crear"})%>
-<body>
-    <%- include("../partials/header.ejs")%>
-   
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Registro</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
-    <main class="main-edit">
-        <form action="/crear" method="POST" enctype="multipart/form-data">
-            <legend class="main-titulo-edit">Formulario de Creacion de producto</legend>
-            <div class="mb-3">
-                <label for="name" class="form-label">Nombre del producto:</label>
-                <input type="text" id="name" name="nombre" class="form-control"  placeholder="Ingrese un producto" >
-            </div>
+     
+ <%- include("../partials/head.ejs",{title:"crear"})%>
 
-            <div class="mb-3">
-                <label for="price" class="form-label">Precio del producto:</label>
-                <input type="text" id="price" name="precio" class="form-control" placeholder="Precio del producto">
-            </div>
+    <body>
+        <%- include("../partials/header.ejs")%>
 
-            <div class="mb-3">
-                <label for="discount" class="form-label">Descuento:</label>
-                <input type="text" id="discount" name="descuento" class="form-control" placeholder="Descuento">
-            </div>
-            
-            <div class="mb-3 imagen-edit">
-                <label for="image"> Seleccionar Imagen </label>
-                <input type="file" name="image" />
-            </div>
-            <div class="mb-3 submit-edit">
-                <button type="submit" class="btn btn-primary"> Guardar Producto </button>
-            </div>
-          </form>
-           
-    </main>
-    <%- include("../partials/footer.ejs")%>
-</body>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Registro</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+            <main class="main-edit">
+                <form action="/createProduct" method="POST" enctype="multipart/form-data">
+                    <legend class="main-titulo-edit">Formulario de Creacion de producto</legend>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre del producto:</label>
+                        <input type="text" id="name" name="nombre" class="form-control"  placeholder="Nombre del producto" >
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Precio del producto:</label>
+                        <input type="text" id="price" name="precio" class="form-control" placeholder="Precio del producto">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="discount" class="form-label">Descuento:</label>
+                        <input type="text" id="discount" name="descuento" class="form-control" placeholder="Descuento">
+                    </div>
+                    <div class="mb-3">
+                        <label for="discount" class="input-descripcion">Descripcion:</label>
+                        <input type="text" id="discount" name="descripcion" class="form-control" placeholder="Descripcion">
+                    </div>
+                    
+                    <div class="mb-3 imagen-edit">
+                        <label for="image"> Seleccionar Imagen </label>
+                        <input type="file" name="image" />
+                    </div>
+                    <div class="mb-3 submit-edit">
+                        <button type="submit" class="btn btn-primary"> Guardar Producto </button>
+                    </div>
+                    
+                    
+                  </form>
+                   
+            </main>
+    
+            <%- include("../partials/footer.ejs")%>
+    </body>
+
 </html>

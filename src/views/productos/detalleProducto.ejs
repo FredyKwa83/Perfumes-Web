@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>detalle productos</title>
-</head>
-<body>
-    <h1>aqui se va a mostrar el detalle de un producto</h1>
-</body>
-</html>
+
+<%- include("../partials/head.ejs",{title:"detalle"})%>
+
+    <body class="grid-container">
+        <%- include("../partials/header.ejs")%>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Registro</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+
+            <!-- <main class="container-detail">
+
+      
+                <section class="caja-detail" >
+                   
+                    <div>
+                    <img class="imagen-detail"  src="/img/imagen_llegada/<%= producto.image %> " alt=""   >
+                    </div>
+                    <div>
+                    <p class="bold">PRECIO: $ <%= producto.precio %></p>
+                    <p class="verde"> DESCUENTO: <%= producto.descuento %> %</p>
+                    <p class="verde"> PRECIO FINAL: $ <%=((100-producto.descuento)/100)*(producto.precio)%> </p>
+                    <p class="gris"><%= producto.nombre %></p>
+                    </div>
+                   
+                </section> -->
+
+                <main class="container-detail">
+
+
+                    <section class="productos-detalle" >
+            
+                        <div class ="div-imagen-detalle">
+                        <img class="imagen-detail"  src="/img/imagen_llegada/<%= producto.image %> " alt=""   >
+                        </div>
+                        <div class="datos-productos">
+                        <p class="nombre-detalle"><%= producto.nombre %></p>
+                        <p class="precio-detalle">Precio: $ <%= producto.precio %></p>
+                        <p class="descuento-detalle"> Descuento: <%= producto.descuento %> %</p>
+                        <p class="precio-final-detalle"> Precio Final: $ <%=((100-producto.descuento)/100)*(producto.precio)%> </p>
+                        <div class="boton-comprar-detalle">
+                        <a href="/comprarProducto" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                        <!-- <div class="boton-comprar-detalle">                  -->
+                        
+                    <!-- </div>  -->
+                    </section>
+            <div class="descripcion-detalle">
+                <h4 class="titulo-descripcion">Descripcion</h4>
+                <p class="parrafo-descripcion"> <%= producto.descripcion %></p>
+            </div>
+            
+                </main> 
+            <%- include("../partials/footer.ejs")%>
+
+                <body>

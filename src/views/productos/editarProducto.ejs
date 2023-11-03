@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>editar producto</title>
-</head>
+     
+ <%- include("../partials/head.ejs",{title:"editar"})%>
 <body>
-    <h1>aqui se va a editar un producto</h1>
+    <%- include("../partials/header.ejs")%>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Registro</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+    <main class="main-edit">
+        <form action="/edit/<%=producto.id%>/?_method=PUT" method="POST" enctype="multipart/form-data">
+            <legend class="main-titulo-edit">Edicion de producto</legend>
+            <input type="hidden" name="id"  value="<%=producto.id %>">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre del producto:</label>
+                <input type="text" id="name" name="nombre" class="form-control" value="<%= producto.nombre %>" placeholder="Nombre del producto" >
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="form-label">Precio del producto:</label>
+                <input type="number" id="price" name="precio" class="form-control" value="<%= producto.precio %>" placeholder="Precio del producto">
+            </div>
+
+            <div class="mb-3">
+                <label for="discount" class="form-label">Descuento:</label>
+                <input type="number" id="discount" name="descuento" class="form-control" value="<%= producto.descuento %>"placeholder="Descuento">
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="form-label">Descripcion:</label>
+                <input type="text" id="description" name="descripcion" class="form-control" value="<%= producto.descripcion %>"placeholder="Descripcion">
+            </div>
+            
+            
+            <div class="mb-3 imagen-edit">
+                <label for="image"> Seleccionar Imagen </label>
+                <input type="file" name="image" />
+            </div>
+            <div class="mb-3 submit-edit">
+                <button type="submit" class="btn btn-primary">Editar Producto </button>
+            </div>
+            
+
+            
+        
+          </form>
+           
+    </main>
+    <%- include("../partials/footer.ejs")%>
 </body>
 </html>

@@ -48,7 +48,7 @@ header {
     font-size: 2.5vw;
 }
 
-button[type="submit"] {
+.boton-buscar {
     background-color: #202020; /* Color de fondo del botón de búsqueda */
     color: #fff; /* Color del texto del botón de búsqueda */
     border: none;
@@ -68,6 +68,7 @@ button[type="submit"] {
     border-radius:none;
     font-size:2.5vw;
     height: 7vw;
+    
    
 }
 
@@ -165,7 +166,7 @@ footer a {
     color: #fff;
 }
 .main-edit{
-    font-size: 5vw;
+    font-size: 3vw;
     text-align:left;
     font-weight: 2vw;
     padding-bottom: 3vw;
@@ -174,12 +175,176 @@ footer a {
 }
 .main-titulo-edit{
     padding-top: 4vw;
-    font-size: 6vw;
+    font-size: 4vw;
     text-align:center;
     line-height: 1em;
     padding-bottom: 5vw;
 }
+.imagen-edit{
+    padding-top: 3vw;
+    font-size: 3vw;
+    text-align:center;
+}
+.submit-edit{
+    padding-top: 1vw;
+    font-size: 4vw;
+    text-align:center;
+}
+.boton-guardar-crear-pro{
+    width: 20vw;
+    background-color: rgb(0, 98, 255);
+    height: 8vw;
+    font-size: 3.2vw;
+    color: white;
+    border-radius: 5px;
+    position: relative;
+    bottom: 3vw;
+    text-align:center;
+}
 
+ /* Estilos base (para pantallas más pequeñas) */
+.product-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;  
+}
+
+.form-group .form-label-crear {
+    font-weight: 400;
+    text-align: left;
+    font-size: 3vw;
+    
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 8vw;
+}
+
+.form-input-file {
+    width: 100%;
+    padding: 10px;
+}
+
+.form-button {
+    display: inline-block;
+    padding: 8px 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+.form-title{
+text-align: center;
+font-size: 5vw;
+
+}
+
+.producto .nombrePerfume{
+    font-size: 5vw;
+}
+    
+    /*linea intermedia del descuento 360px*/
+    .linea-roja {
+        position: relative;
+        
+      }
+      
+      .linea-roja::before {
+        content: '';
+        position: absolute;
+        left: 37vw;
+        top: 50%; /* Ubica la línea en la mitad vertical del texto */
+        width: 21%;
+        height: 1px; /* Ancho y grosor de la línea */
+        background: red; /* Color de la línea */
+      }
+      .imagen-detail{
+        width: 73%;
+        position: relative;
+        left: 5vw;
+
+      }
+      .productos-detalle{
+        display: flex;
+        right: 30vw;
+      }
+      .datos-productos{
+        font-size: 3vw;
+        width: 200vw;
+        position: relative;
+        right: 3vw;
+        text-align: left;
+        padding-top: 3vw;
+      }
+
+      .nombre-detalle{
+        font-weight: 600;
+        color: red;
+        
+      }
+      .descuento-detalle{
+        position: relative;
+        bottom: 2.5vw;
+        font-size:3vw ;
+
+      }
+      .precio-final-detalle{
+        position: relative;
+        bottom: 5vw;
+        font-size:3vw ;
+
+      }
+.titulo-descripcion{
+       font-weight: 650;
+       font-size: 3.2vw;
+
+}
+.parrafo-descripcion{
+    text-align: justify;
+    font-size: 3.2vw;
+
+
+}
+.descripcion-detalle{
+    margin-right: 8vw;
+    margin-left: 8vw;
+    padding-top: 3vw;
+    padding-bottom: 5vw;
+
+}
+.container-detail{
+    position: relative;
+    top:1vw;
+}
+.div-imagen-detalle{
+    width:250vw;
+    position: relative;
+    top: 3vw;
+
+}
+.boton-comprar-detalle a{
+width: 20vw;
+font-size: 3vw;
+position: relative;
+left: 4vw;
+bottom: 3vw;
+font-weight: 500;
+height:  8vw;
+}
 
 @media (min-width: 481px) {
   
@@ -228,7 +393,7 @@ footer a {
     }
 
         
-    button[type="submit"] {
+    .boton-buscar {
         background-color: #202020; /* Color de fondo del botón de búsqueda */
         color: #fff; /* Color del texto del botón de búsqueda */
         cursor: pointer;
@@ -341,6 +506,36 @@ footer a {
         text-decoration: none;
         color: #fff;
     }    
+    .boton-guardar-crear-pro{
+        width: 20vw;
+        background-color: rgb(0, 98, 255);
+        height: 8vw;
+        font-size: 3.2vw;
+        color: white;
+        border-radius: 5px;
+        position: relative;
+        bottom: 3vw;
+    
+    }
+    .producto .nombrePerfume{
+        font-size: 3.5vw;
+    }
+    /*linea intermedia del descuento 481px*/
+    .linea-roja {
+        position: relative;
+        
+      }
+      
+      .linea-roja::before {
+        content: '';
+        position: absolute;
+        left: 18vw;
+        top: 50%; /* Ubica la línea en la mitad vertical del texto */
+        width: 31%;
+        height: 1px; /* Ancho y grosor de la línea */
+        background: red; /* Color de la línea */
+      }
+     
 }
     
 @media (min-width: 768px) {
@@ -392,7 +587,7 @@ footer a {
      }
  
          
-     button[type="submit"] {
+     .boton-buscar {
          background-color: #202020; /* Color de fondo del botón de búsqueda */
          color: #fff; /* Color del texto del botón de búsqueda */
          cursor: pointer;
@@ -462,13 +657,16 @@ footer a {
         margin-right: 8vw;
         margin-bottom: 3vw;
     }
+    /*linea intermedia del descuento 768px*/
     .linea-roja {
         position: relative;
+        
       }
       
       .linea-roja::before {
         content: '';
         position: absolute;
+        left: 11vw;
         top: 50%; /* Ubica la línea en la mitad vertical del texto */
         width: 31%;
         height: 1px; /* Ancho y grosor de la línea */
@@ -517,7 +715,21 @@ footer a {
          text-decoration: none;
          color: #fff;
          font-size: 2.5vw;
-     }     
+     }    
+     .boton-guardar-crear-pro{
+        width: 20vw;
+        background-color: rgb(0, 98, 255);
+        height: 8vw;
+        font-size: 3.2vw;
+        color: white;
+        border-radius: 5px;
+        position: relative;
+        bottom: 3vw;
+    
+    } 
+    .producto .nombrePerfume{
+        font-size: 2vw;
+    }
 } 
      
 
@@ -553,6 +765,35 @@ footer a {
         font-size: 1.6vw;
 
     } 
+    .boton-guardar-crear-pro{
+        width: 20vw;
+        background-color: rgb(0, 98, 255);
+        height: 8vw;
+        font-size: 3.2vw;
+        color: white;
+        border-radius: 5px;
+        position: relative;
+        bottom: 3vw;
+    
+    }
+    .producto .nombrePerfume{
+        font-size: 1.5vw;
+    }
+     /*linea intermedia del descuento 1024px*/
+     .linea-roja {
+        position: relative;
+        
+      }
+      
+      .linea-roja::before {
+        content: '';
+        position: absolute;
+        left: 8vw;
+        top: 50%; /* Ubica la línea en la mitad vertical del texto */
+        width: 33%;
+        height: 1px; /* Ancho y grosor de la línea */
+        background: red; /* Color de la línea */
+      }
 
 }
     

@@ -1,28 +1,36 @@
-const express = require("express");
-const router = express.Router()
-const productosController= require("../controllers/productosController")
-  
-//crear ruta raiz
-router.get("/", productosController.index)
+const express = require('express');
+const router = express.Router();
+const multer = require("multer");
+const path = require("path");
 
-router.get("/crear", productosController.crear)
+var multerDiskStorage = multer.diskStorage({
+    destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
+     cb(null, path.join(__dirname,'../../public/img/imagen_llegada'));    // Ruta donde almacenamos el archivo
+    },
+   
+    filename: function(req, file, cb) {          // request, archivo y callback que almacena archivo en destino
+        let imageName = `${Date.now()}_img${path.extname(file.originalname)}`;   // milisegundos y extensión de archivo original
+        cb(null, imageName);         
+       }
+});
 
-router.get("/detalle", productosController.detalle)
-
-router.get("/editar", productosController.editar)
-
-router.get("/eliminar", productosController.eliminar)
-
-
-
-
-  
+var uploadFile = multer({ storage: multerDiskStorage });
 
 
+const productsController = require('../controllers/productosController');
 
+router.get('/', productsController.index); 
 
+router.get('/detail/:id', productsController.detail); 
 
+router.get ('/edit/:id', productsController.getEdit);
+router.put ('/edit/:id', uploadFile.single('image'), productsController.putEdit);
 
+router.get('/createProduct', productsController.getCreateProduct); 
+router.post('/createProduct', uploadFile.single('image'), productsController.postCreateProduct); 
+
+router.get('/delete/:id', productsController.getDestroy);
+router.delete('/delete/:id', uploadFile.single('image'), productsController.deleteDestroy);
 
 
 
