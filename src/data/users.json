@@ -271,5 +271,18 @@
   "password": "$2a$10$WBjBNy2zWTBGxj2pO5W3uu6nvJmcsAKtt1xPr9okokIadYhv7g89y",
   "confirmPassword": "$2a$10$1WD8LEWHUMtdKnJCileIJeuP/0KQho2oaYgHrNm4irXj5deW.ev2u",
   "image": "1699135144027_img.jpg"
+ },
+ {
+  "id": 22,
+  "nombre": "erika",
+  "Apellido": "bernal",
+  "username": "erika123",
+  "email": "erika123@gmail.com",
+  "fecha": "2023-11-02",
+  "pais": "Chile",
+  "genero": "femenino",
+  "password": "$2a$10$0pclUEnS6ptXz7yUSEpsiuhfEC8YVBxwU8MeQRxTYLkxSHldy4do6",
+  "confirmPassword": "$2a$10$jiLxGQRGYw6p/RR8m6gGaeD0ANpJ5rQPUATHIJw7JTQSbDGDBajq2",
+  "image": "1699202587586_img.jpg"
  }
 ]
