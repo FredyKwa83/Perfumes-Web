@@ -345,7 +345,22 @@ bottom: 3vw;
 font-weight: 500;
 height:  8vw;
 }
+.img-perfil{
+    width: 30%;
+}
+.bienvenida{
+    width: 20vw;
+}
+.imagen-perfil {
+    width:10%;
+}
 
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    left: 15vw;
+}
 @media (min-width: 481px) {
   
     header {

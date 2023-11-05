@@ -1,0 +1,27 @@
+
+// API PARA LIBROS
+###
+GET http://localhost:3005/api/ HTTP/1.1
+
+###
+GET http://localhost:3005/api/6 HTTP/1.1
+
+###
+POST http://localhost:3005/api/ HTTP/1.1
+nombre: "Algebra de Baldor",
+descripcion:" Matematicas, aritmetica y algebra con problemas solucionados",
+precio: 40000,
+descuento: 5,
+imagen:https://images.cdn1.buscalibre.com/fit-in/360x360/ec/50/ec50570b02f98e81e8413a4610c36c5d.jpg
+genero: Educacion 
+
+###
+DELETE http://localhost:3000/api/25 HTTP/1.1
+
+// API PARA USUARIOS
+
+###
+GET http://localhost:3000/user/api HTTP/1.  
+
+###
+DELETE http://localhost:3000/user/api/36 HTTP/1.1
