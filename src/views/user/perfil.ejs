@@ -24,12 +24,7 @@
                         <img class="imagen-perfil" src="/img/imagen_perfil/<%= locals.userLogged.image %>">
                         Hola <%= locals.userLogged.username %> 
                     </a>
-                    <!-- <ul class="dropdown-menu perfil-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/user/perfil">Mi perfil</a>
-                        <li><hr class="dropdown-divider"></li>
-                        <a class="dropdown-item" href="/user/cerrar">Cerrar</a>
-                    </ul> -->
-
+                  
                     <ul class="dropdown-menu perfil-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/user/perfil">Mi perfil</a>
                         <li><hr class="dropdown-divider"></li>
@@ -49,6 +44,7 @@
             <img class="img-perfil" src="/img/imagen_perfil/<%= locals.userLogged.image %>" alt="">
             <div class="alert alert-success"> 
                 <p>nombre: <%= locals.userLogged.nombre %></p>
+                <p>usuario: <%= locals.userLogged.username %></p>
                 <p>email: <%= locals.userLogged.email %></p>
                 <p>id: <%= locals.userLogged.id %></p>
             </div>
