@@ -97,62 +97,7 @@
                                                                             }
                                                             </select>
 
-                                                            <!-- <label class="form-label" for="pais"> </label>
-                <select name="pais" 
-                class="form-control <%= locals.errors && errors.pais ? 'is-invalid' : null %>" >
-                    
-                    <option value="<%= locals.oldData ? oldData.pais : null %>" > pais </option>
-
-                   
-                    <option value="Afghanistan">Afganistán</option>
-                    <option value="Albania">Albania</option>
-                    <option value="Algeria">Argelia</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value="Angola">Angola</option>
-                    <option value="Antigua and Barbuda">Antigua y Barbuda</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Armenia">Armenia</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Austria">Austria</option>
-                    <option value="Azerbaijan">Azerbaiyán</option>
-                    <option value="Bahamas">Bahamas</option>
-                    <option value="Bahrain">Baréin</option>
-                    <option value="Bangladesh">Bangladesh</option>
-                    <option value="Barbados">Barbados</option>
-                    <option value="Belarus">Bielorrusia</option>
-                    <option value="Belgium">Bélgica</option>
-                    <option value="Belize">Belice</option>
-                    <option value="Benin">Benín</option>
-                    <option value="Bhutan">Bután</option>
-                    <option value="Bolivia">Bolivia</option>
-                    <option value="Bosnia and Herzegovina">Bosnia y Herzegovina</option>
-                    <option value="Botswana">Botsuana</option>
-                    <option value="Brazil">Brasil</option>
-                    <option value="Brunei">Brunéi</option>
-                    <option value="Bulgaria">Bulgaria</option>
-                    <option value="Burkina Faso">Burkina Faso</option>
-                    <option value="Burundi">Burundi</option>
-                    <option value="Cabo Verde">Cabo Verde</option>
-                    <option value="Cambodia">Camboya</option>
-                    <option value="Cameroon">Camerún</option>
-                    <option value="Canada">Canadá</option>
-                    <option value="Central African Republic">República Centroafricana</option>
-                    <option value="Chad">Chad</option>
-                    <option value="Chile">Chile</option>
-                    <option value="China">China</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="Comoros">Comoras</option>
-                    <option value="Congo">Congo</option>
-                    <option value="Costa Rica">Costa Rica</option>
-                    <option value="Croatia">Croacia</option>
-                    <option value="Cuba">Cuba</option>
-                    <option value="Cyprus">Chipre</option>
-                    <option value="Czech Republic">República Checa</option>
-                    <option value="Denmark">Dinamarca</option>
-                    <option value="Djibouti">Yibuti</option>
-                    <option value="Dominica">Dominica</option>
-                    <option value="Dominican Republic">República Dominicana</option>
-                </select> -->
+                      
 
                                                             <% if (locals.errors && errors.pais) { %>
                                                                 <div>
@@ -181,15 +126,7 @@
                                                                                     }
                                                                     </select>
 
-                                                                    <!-- <select name="genero" 
-                class="form-control <%= locals.errors && errors.genero ? 'is-invalid' : null %>" 
-                value="<%= locals.oldData ? oldData.genero : null %>"> 
-                    <option value="">Selecciona un género</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="No-binario">No binario</option>
-                    <option value="otro">otro</option>
-                </select> -->
+
                                                                     <br>
 
                                                                     <% if (locals.errors && errors.genero) { %>
@@ -215,15 +152,26 @@
                                                                                     </p>
                                                                                 </div>
                                                                                 <% } %>
-                                                                                    <div class="error"
+                                                                                    <!-- <div class="error"
                                                                                         id="password-error"></div>
                                                                                     <label
                                                                                         for="confirm-password"></label>
                                                                                     <input type="password"
                                                                                         placeholder="Confirmar Contraseña"
                                                                                         name="confirmPassword"
-                                                                                        class="form-control">
-                                                                                    <br>
+                                                                                        class="form-control"> -->
+                                                                                        <label for="confirm-password"></label>
+                                                                                        <input type="password" placeholder="Confirmar Contraseña" name="confirmPassword" class="form-control <%= locals.errors && errors.confirmPassword ? 'is-invalid' : '' %>">
+                                                                                        <br>
+                                                                                        
+                                                                                        <% if (locals.errors && errors.confirmPassword) { %>
+                                                                                            <div>
+                                                                                                <p style="color: red;">
+                                                                                                    <%= errors.confirmPassword.msg %>
+                                                                                                </p>
+                                                                                            </div>
+                                                                                        <% } %>
+                                                                                        <br>
 
                                                                                     <div class="g-recaptcha"
                                                                                         data-sitekey="123456789">
@@ -238,6 +186,7 @@
                                                                                         >
                                                                                     </div>
 
+                                                                                 
                                                                                     <% if (locals.errors && errors.image) {
                                                                                         %>
                                                                                         <div>

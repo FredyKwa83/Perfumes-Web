@@ -18,38 +18,42 @@
         </nav>
 
         <ul class="right-navbar">
-                <% if (locals.isLogged) { %>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="imagen-perfil" src="/img/imagen_perfil/<%= locals.userLogged.image %>">
-                            Hola <%= locals.userLogged.username %> 
-                        </a>
-                        <ul class="dropdown-menu perfil-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/user/perfil">Mi perfil</a>
-                            <li><hr class="dropdown-divider"></li>
-                            <a class="dropdown-item" href="/user/cerrar">Cerrar</a>
-                        </ul>
-                    </li>
-                <% } else { %>
-                    <li class="nav-item"><a class="nav-link" href="/user/registro">Registro</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
-                <% } %>
-            </ul>
+            <% if (locals.isLogged) { %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="imagen-perfil" src="/img/imagen_perfil/<%= locals.userLogged.image %>">
+                        Hola <%= locals.userLogged.username %> 
+                    </a>
+                    <!-- <ul class="dropdown-menu perfil-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/user/perfil">Mi perfil</a>
+                        <li><hr class="dropdown-divider"></li>
+                        <a class="dropdown-item" href="/user/cerrar">Cerrar</a>
+                    </ul> -->
+
+                    <ul class="dropdown-menu perfil-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/user/perfil">Mi perfil</a>
+                        <li><hr class="dropdown-divider"></li>
+                        <a class="dropdown-item" href="/user/cerrar">Cerrar</a>
+                    </ul>
+                    
+
+                </li>
+            <% } else { %>
+                <li class="nav-item"><a class="nav-link" href="/user/registro">Registro</a></li>
+                <li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
+            <% } %>
+        </ul>
         
         
-        <h4 class="bienvenida">BIENVENID@ <%= user.username %>!!</h4>
-
-   <!-- <h2 class = "titulo-h1-createProducts"> PERFIL DE USUARIO <%= user.username %></h2>  -->
-
         <main class="main-edit">
-           <img class="img-perfil" src=/img/imagen_perfil/<%= user.image %> alt="">
-           <div class="alert alert-success"> 
-           <p>Nombre: <%= user.nombre %></p>
-           <p>Email: <%= user.email %></p>
-           <p>Id: <%= user.id %></p>
-
-           </div>
+            <img class="img-perfil" src="/img/imagen_perfil/<%= locals.userLogged.image %>" alt="">
+            <div class="alert alert-success"> 
+                <p>nombre: <%= locals.userLogged.nombre %></p>
+                <p>email: <%= locals.userLogged.email %></p>
+                <p>id: <%= locals.userLogged.id %></p>
+            </div>
         </main>
+        
         
             <%- include('./../partials/footer') %>     
     

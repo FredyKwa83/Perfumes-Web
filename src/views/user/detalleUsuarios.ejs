@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs",{title:"detalle"})%>
+
+    <body class="grid-container">
+        <%- include("../partials/header.ejs")%>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Registro</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+
+           
+                <main class="container-detail">
+
+
+                    <section class="productos-detalle" >
+            
+                        <div class ="div-imagen-detalle-usuarios">
+                        <img class="imagen-detail-usuarios"  src="/img/icono-usuario.png" alt=""   >
+                        
+                        <div class="datos-productos todos-los-datos">
+                        <p class="nombre-detalle-usuario"> <%= usuario.nombre %></p>
+                        <p class="detalle-usuarios"> usuario: <%= usuario.username %></p>
+                        <p class="detalle-usuarios"> email: <%= usuario.email %> </p>
+                        <p class="detalle-usuarios"> pais: <%= usuario.pais %> </p>
+                        <p class="detalle-usuarios"> genero: <%= usuario.genero %> </p>
+                        <div class="div-password">
+                        <p class="detalle-usuarios"> password: <br> <%= usuario.password %> </p>
+                        <p class="detalle-usuarios"> confirmPassword: <br> <%= usuario.confirmPassword %></p>
+                        </div> 
+                        </div>                   
+                        <div class="boton-eliminar-detalle-usuario">
+                        <a href="/comprarProducto" class="btn btn-primary">eliminar</a>
+                        </div>
+
+                        <div class="boton-editar-detalle-usuario">
+                            <a href="/comprarProducto" class="btn btn-primary">editar</a>
+                            </div>
+                        </div>
+                      
+                        
+                 
+                    </section>
+           
+                </main> 
+            <%- include("../partials/footer.ejs")%>
+
+                <body>

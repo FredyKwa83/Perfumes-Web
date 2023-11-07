@@ -258,7 +258,7 @@ font-size: 5vw;
 }
     
     /*linea intermedia del descuento 360px*/
-    .linea-roja {
+    /* .linea-roja {
         position: relative;
         
       }
@@ -267,15 +267,17 @@ font-size: 5vw;
         content: '';
         position: absolute;
         left: 37vw;
-        top: 50%; /* Ubica la línea en la mitad vertical del texto */
+        top: 50%; 
         width: 21%;
-        height: 1px; /* Ancho y grosor de la línea */
-        background: red; /* Color de la línea */
-      }
+        height: 1px; 
+        background: red; 
+      } */
+
       .imagen-detail{
-        width: 73%;
+        width: 450%;
         position: relative;
         left: 5vw;
+        top:20vw
 
       }
       .productos-detalle{
@@ -283,8 +285,8 @@ font-size: 5vw;
         right: 30vw;
       }
       .datos-productos{
-        font-size: 3vw;
-        width: 200vw;
+        font-size: 4vw;
+        width: 300vw;
         position: relative;
         right: 3vw;
         text-align: left;
@@ -293,13 +295,14 @@ font-size: 5vw;
 
       .nombre-detalle{
         font-weight: 600;
-        color: red;
+        color: rgb(0, 21, 255);
         
       }
       .descuento-detalle{
         position: relative;
         bottom: 2.5vw;
-        font-size:3vw ;
+        font-size:2.5vw ;
+        
 
       }
       .precio-final-detalle{
@@ -331,9 +334,10 @@ font-size: 5vw;
     top:1vw;
 }
 .div-imagen-detalle{
-    width:250vw;
+    width:50vw;
     position: relative;
-    top: 3vw;
+    left: 50vw;
+    bottom: 20vw;
 
 }
 .boton-comprar-detalle a{
@@ -361,6 +365,16 @@ height:  8vw;
     position:relative;
     left: 15vw;
 }
+
+.ancla-index{
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .div-imagen-detalle-usuarios img  {
+    width: 30%;
+  }
+
 @media (min-width: 481px) {
   
     header {
@@ -536,7 +550,7 @@ height:  8vw;
         font-size: 3.5vw;
     }
     /*linea intermedia del descuento 481px*/
-    .linea-roja {
+    /* .linea-roja {
         position: relative;
         
       }
@@ -545,12 +559,24 @@ height:  8vw;
         content: '';
         position: absolute;
         left: 18vw;
-        top: 50%; /* Ubica la línea en la mitad vertical del texto */
+        top: 50%; 
         width: 31%;
-        height: 1px; /* Ancho y grosor de la línea */
-        background: red; /* Color de la línea */
+        height: 1px; 
+        background: red; 
+      } */
+
+      .ancla-index{
+        text-decoration: none;
+        color: #000000;
       }
      
+      /* .div-imagen-detalle{
+        width: 50vw;
+      }
+
+      .div-password p{
+        width: 20vw;
+      } */
 }
     
 @media (min-width: 768px) {
@@ -673,20 +699,22 @@ height:  8vw;
         margin-bottom: 3vw;
     }
     /*linea intermedia del descuento 768px*/
-    .linea-roja {
+    
+    /* .linea-roja {
         position: relative;
         
       }
+      
       
       .linea-roja::before {
         content: '';
         position: absolute;
         left: 11vw;
-        top: 50%; /* Ubica la línea en la mitad vertical del texto */
+        top: 50%; 
         width: 31%;
-        height: 1px; /* Ancho y grosor de la línea */
-        background: red; /* Color de la línea */
-      }
+        height: 1px; 
+        background: red;
+      } */
      
      /* Estilos del pie de página */
      footer {
@@ -795,7 +823,7 @@ height:  8vw;
         font-size: 1.5vw;
     }
      /*linea intermedia del descuento 1024px*/
-     .linea-roja {
+     /* .linea-roja {
         position: relative;
         
       }
@@ -804,11 +832,11 @@ height:  8vw;
         content: '';
         position: absolute;
         left: 8vw;
-        top: 50%; /* Ubica la línea en la mitad vertical del texto */
+        top: 50%; 
         width: 33%;
-        height: 1px; /* Ancho y grosor de la línea */
-        background: red; /* Color de la línea */
-      }
+        height: 1px; 
+        background: red; 
+      } */
 
 }
     

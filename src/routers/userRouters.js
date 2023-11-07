@@ -61,11 +61,16 @@ const validateRegistro = [
 
     check('password')
     .notEmpty().withMessage('Debes completar el password').bail()
-    .isLength({ min: 8 }).withMessage('El password debe tener al menos 8 carateres'),
-    
+    .isLength({ min: 8 }).withMessage('El password debe tener al menos 8 caracteres'),
+
     check('confirmPassword')
     .notEmpty().withMessage('Debes confirmar el password').bail()
-    .isLength({ min: 8 }).withMessage('El password debe tener al menos 8 carateres'),
+    .custom((value, { req }) => {
+        if (value !== req.body.password) {
+            throw new Error('Las contraseñas no coinciden');
+        }
+        return true;
+    }),
 
     check('image')
     .custom((value, { req }) => {
@@ -86,6 +91,10 @@ const validateRegistro = [
     )
     ]
 
+    
+router.get('/todos', userController.obtenerTodosLosUsuarios);
+
+router.get('/todos/:id', userController.detalleUsuario);
 
 router.get('/login', userController.login);
 router.post('/login', validateLogin, userController.postLogin); 
@@ -96,6 +105,45 @@ router.get('/registro', guestMiddleware, userController.registro);
 router.post('/registro', uploadFile.single('image'), validateRegistro, userController.postRegistro); 
 
 // cerrar sesion
-router.get('/cerrar/', userController.cerrar);
+router.get('/cerrar', userController.cerrar);
 
 module.exports = router;
+
+// const express = require('express');
+
+// const path =  require('path');
+
+// const router = express.Router();
+
+// const userController = require('../controllers/userController');
+
+// const registerValidations = require('../validations/registerValidations');
+
+// const multer = require('multer');
+
+// const multerDiskStorage = multer.diskStorage({
+//     destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
+//      cb(null, path.join(__dirname,'../../public/img/imagen_perfil'));    // Ruta donde almacenamos el archivo
+//     },
+//     filename: function(req, file, cb) {          // request, archivo y callback que almacena archivo en destino
+//      let imageName = Date.now() + path.extname(file.originalname);   // milisegundos y extensión de archivo original
+//      cb(null, imageName);         
+//     }
+// });
+
+// const uploadFile = multer({ storage: multerDiskStorage });
+
+// router.get('/perfil', userController.perfil);
+
+// router.get('/registro', userController.register );
+// router.post('/registro',uploadFile.single('image'), registerValidations, userController.registerPOST);
+
+// router.get('/login', userController.login);
+// router.post('/login', userController.loginPOST)
+
+
+
+
+// module.exports = router;
+
+
