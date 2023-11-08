@@ -63,14 +63,14 @@ const validateRegistro = [
     .notEmpty().withMessage('Debes completar el password').bail()
     .isLength({ min: 8 }).withMessage('El password debe tener al menos 8 caracteres'),
 
-    check('confirmPassword')
-    .notEmpty().withMessage('Debes confirmar el password').bail()
-    .custom((value, { req }) => {
-        if (value !== req.body.password) {
-            throw new Error('Las contraseñas no coinciden');
-        }
-        return true;
-    }),
+    // check('confirmPassword')
+    // .notEmpty().withMessage('Debes confirmar el password').bail()
+    // .custom((value, { req }) => {
+    //     if (value !== req.body.password) {
+    //         throw new Error('Las contraseñas no coinciden');
+    //     }
+    //     return true;
+    // }),
 
     check('image')
     .custom((value, { req }) => {

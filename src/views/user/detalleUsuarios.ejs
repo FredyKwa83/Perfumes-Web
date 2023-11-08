@@ -38,14 +38,15 @@
                         </div> -->
 
                         <form class="boton-eliminar-detalle-usuario" method="POST" action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST" style="display: inline-flex;" class="boton-delete" enctype="multipart/form-data">
-                            <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar a este usuario?')">Eliminar Usuario</button>
+                            <button class="boton-eliminar-usuario" type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar a este usuario?')">Eliminar</button>
                         </form>
+                        
 
                         <!-- <form class="boton-eliminar-detalle-usuario" action="/usuarios/<%= usuario.id %>?_method=DELETE" method="POST" style="display: inline-flex;" class="boton-delete">
                             <button type="submit" class="container-btn-detail text-center camion-compartir">Eliminar</button>
                           </form> -->
 
-                        <div class="boton-editar-detalle-usuario">
+                        <div class="boton-editar-usuario">
                             <a href="/user/editar/<%=usuario.id%>/" class="btn btn-primary">editar</a>
                             </div>
                         </div>
