@@ -635,6 +635,42 @@ height:  8vw;
       .div-password p{
         width: 20vw;
       } */
+
+      /* 
+       */
+
+       
+  .boton-eliminar-usuario{
+    height: 8vw;
+    border-radius: 5px;
+    width: 20vw;
+    background-color: #007bff;
+    color: white;
+    font-size: 4vw;
+    position: relative;
+    right:10vw;
+    bottom: 40vw;
+  }
+
+  .boton-editar-usuario{
+    height: 8vw;
+    border-radius: 5px;
+    width: 20vw;
+    background-color: #007bff;
+    color: white;
+    font-size: 4vw;
+    position: relative;
+    top:25vw;
+    right: 30vw;
+    text-align: center;   
+  }
+
+  .boton-editar-usuario a{
+    font-size: 4vw;
+    text-align: center;
+    color:white;
+    text-decoration: none;
+  }
 }
     
 @media (min-width: 768px) {
@@ -836,7 +872,11 @@ height:  8vw;
   .div-imagen-detalle-usuarios img  {
     width: 40%;
     position: relative;
-    left: 20vw ;
+    left: 8vw ;
+  }
+
+  .div-imagen-detalle-usuarios{
+
   }
   .nombre-detalle-usuario{
     font-size: 4vw;
@@ -844,6 +884,8 @@ height:  8vw;
   }
   .datos-productos-todos-los-datos{
     text-align: center;
+    position:relative;
+    right: 12vw;
   }
   .boton-eliminar-detalle-usuario{
     position: relative;
