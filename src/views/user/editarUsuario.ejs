@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+     
+ <%- include("../partials/head.ejs",{title:"editar"})%>
+<body>
+    <%- include("../partials/header.ejs")%>
+
+    <nav>
+        <ul>
+                    <li><a href="/user/todos">Inicio</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="/user/registro">Registro</a></li>
+                    <li><a href="/user/login">Login</a></li>
+        </ul>
+    </nav>
+    <main class="main-edit">
+      
+      
+        <form action="/user/editar/<%=usuario.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+
+
+            <legend class="main-titulo-edit">Editar Usuario</legend>
+            <input type="hidden" name="id"  value="<%=usuario.id %>">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre:</label>
+                <input type="text" id="name" name="nombre" class="form-control" value="<%= usuario.nombre %>" placeholder="Nombre" >
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="form-label">Apellido:</label>
+                <input type="text" id="price" name="Apellido" class="form-control" value="<%= usuario.Apellido %>" placeholder="Apellido">
+            </div>
+
+            <div class="mb-3">
+                <label for="discount" class="form-label">Username:</label>
+                <input type="text" id="discount" name="username" class="form-control" value="<%= usuario.username %>"placeholder="username">
+            </div>
+
+            <div class="mb-3">
+                <label for="discount" class="form-label">email:</label>
+                <input type="email" id="discount" name="email" class="form-control" value="<%= usuario.email %>"placeholder="email">
+            </div>
+
+            <div class="mb-3">
+                <label for="discount" class="form-label">password:</label>
+                <input type="password" id="discount" name="password" class="form-control" value="<%= usuario.password %>"placeholder="password">
+            </div>
+            
+            <select name="pais"
+                class="form-control <%= locals.errors && errors.pais ? 'is-invalid' : null %>"
+                id="">
+                <option value="">elege un pais</option>
+                <% let paises=[ "Colombia" , "Ecuador" , "Chile", "Peru" , "Venezula" ,"Brasil", "Argentina"
+                                 , "Mexico" ,"Bolivia","otro"] %>
+                <% for (const onePais of paises) { %>
+                <option value="<%= onePais %>" <%=locals.oldData && (onePais===oldData.pais) ? 'selected' :null %> >
+                <%= onePais %>
+                </option> <% } %>            
+            </select> 
+            
+            
+            <!-- <div class="mb-3 imagen-edit">
+                <label for="image"> Seleccionar Imagen </label>
+                <input type="file" name="image" />
+            </div> -->
+            <div class="mb-3 submit-edit">
+                <button type="submit" class="btn btn-primary">Enviar Cambios </button>
+            </div>
+        
+          </form>
+           
+    </main>
+    <%- include("../partials/footer.ejs")%>
+</body>
+</html>

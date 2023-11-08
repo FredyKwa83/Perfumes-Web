@@ -372,7 +372,36 @@ height:  8vw;
   }
   
   .div-imagen-detalle-usuarios img  {
-    width: 30%;
+    width: 70%;
+    position: relative;
+    left: 8vw ;
+  }
+  .nombre-detalle-usuario{
+    font-size: 5vw;
+    font-weight: 600;
+  }
+  .detalle-usuarios{
+    font-size: 4vw;
+  }
+  .datos-productos-todos-los-datos{
+    text-align: center;
+  }
+  .boton-eliminar-detalle-usuario{
+    position: relative;
+    bottom: 8vw;
+    top: 0vw;
+  }
+  .boton-editar-detalle-usuario{
+    position: relative;
+    right: 20vw;
+    top: 12vw;
+   
+  }
+  .btn-primary{
+    width: 20vw;
+    top: 10vw;
+    height: 8vw;
+    font-size: 3vw;
   }
 
 @media (min-width: 481px) {
@@ -773,9 +802,53 @@ height:  8vw;
     .producto .nombrePerfume{
         font-size: 2vw;
     }
-} 
-     
 
+     
+  .div-imagen-detalle-usuarios img  {
+    width: 40%;
+    position: relative;
+    left: 20vw ;
+  }
+  .nombre-detalle-usuario{
+    font-size: 4vw;
+    font-weight: 600;
+  }
+  .datos-productos-todos-los-datos{
+    text-align: center;
+  }
+  .boton-eliminar-detalle-usuario{
+    position: relative;
+    bottom: 8vw;
+    top: 7vw;
+    right: 10.5vw;
+    width: 10%;
+    
+  }
+  .boton-editar-detalle-usuario{
+    position: relative;
+    right: 20vw;
+    top: 1vw;
+    bottom: 5;
+    width: 9.8%;
+    font-size: 3.5vw;
+    
+   
+  }
+  .btn-primary{
+    width: 120%;
+    top: 10vw;
+    height: 6%;
+    
+
+  }
+    .productos-detalle{
+        position: relative;
+        left: 12vw;
+    }
+    .detalle-usuarios{
+       font-size: 3vw;
+    }
+} 
 @media (min-width: 1024px) {
 
     /* Estilos de las cajas de productos (GRID) */
@@ -838,7 +911,37 @@ height:  8vw;
         background: red; 
       } */
 
+
+.div-imagen-detalle-usuarios img  {
+    width: 50%;
+    position: relative;
+    left: 11vw ;
+  }
+  .nombre-detalle-usuario{
+    font-size: 5vw;
+    font-weight: 600;
+  }
+  .datos-productos-todos-los-datos{
+    text-align: center;
+  }
+  .boton-eliminar-detalle-usuario{
+    position: relative;
+    bottom: 8vw;
+    top: 0vw;
+  }
+  .boton-editar-detalle-usuario{
+    position: relative;
+    right: 20vw;
+    top: 5vw;
+   
+  }
+  .btn-primary{
+    width: 20vw;
+    top: 10vw;
+  }
+    .productos-detalle{
+        position: relative;
+        left: 20vw;
+    }
+
 }
-    
-
-

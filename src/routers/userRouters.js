@@ -96,6 +96,12 @@ router.get('/todos', userController.obtenerTodosLosUsuarios);
 
 router.get('/todos/:id', userController.detalleUsuario);
 
+// //Ruta para actualizar un usuario por su ID
+router.get('/editar/:id', userController. getEdit);
+router.put('/editar/:id', userController.putEdit);
+
+router.delete("/delete/:id", userController.delete)
+
 router.get('/login', userController.login);
 router.post('/login', validateLogin, userController.postLogin); 
 

@@ -73,6 +73,19 @@
 const db = require('../data/models'); // Asegúrate de importar el modelo de usuario adecuadamente
 
 module.exports = {
+
+  // Endpoint para ver la cantidad total de usuarios registrados
+getTotalUsers: async (req, res) => {
+  try {
+    // Utiliza la conexión a la base de datos para obtener el total de usuarios
+    const totalUsuarios = await db.usuario.count();
+    res.json({ totalUsuarios });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error al obtener el total de usuarios' });
+  }
+},
+
   // Endpoint para obtener todos los usuarios
   getAllUsers: async (req, res) => {
     try {

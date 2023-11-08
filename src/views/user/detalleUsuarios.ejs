@@ -8,10 +8,10 @@
 
             <nav>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="/user/todos">Inicio</a></li>
                     <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Registro</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li><a href="/user/registro">Registro</a></li>
+                    <li><a href="/user/login">Login</a></li>
                 </ul>
             </nav>
 
@@ -22,25 +22,31 @@
                     <section class="productos-detalle" >
             
                         <div class ="div-imagen-detalle-usuarios">
-                        <img class="imagen-detail-usuarios"  src="/img/icono-usuario.png" alt=""   >
+                        <img class="imagen-detail-usuarios"  src="/img/imagen_perfil/<%= usuario.image%>" alt=""   >
                         
-                        <div class="datos-productos todos-los-datos">
+                        <div class="datos-productos-todos-los-datos">
                         <p class="nombre-detalle-usuario"> <%= usuario.nombre %></p>
                         <p class="detalle-usuarios"> usuario: <%= usuario.username %></p>
                         <p class="detalle-usuarios"> email: <%= usuario.email %> </p>
                         <p class="detalle-usuarios"> pais: <%= usuario.pais %> </p>
                         <p class="detalle-usuarios"> genero: <%= usuario.genero %> </p>
-                        <div class="div-password">
-                        <p class="detalle-usuarios"> password: <br> <%= usuario.password %> </p>
-                        <p class="detalle-usuarios"> confirmPassword: <br> <%= usuario.confirmPassword %></p>
+
                         </div> 
                         </div>                   
-                        <div class="boton-eliminar-detalle-usuario">
+                        <!-- <div class="boton-eliminar-detalle-usuario">
                         <a href="/comprarProducto" class="btn btn-primary">eliminar</a>
-                        </div>
+                        </div> -->
+
+                        <form class="boton-eliminar-detalle-usuario" method="POST" action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST" style="display: inline-flex;" class="boton-delete" enctype="multipart/form-data">
+                            <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar a este usuario?')">Eliminar Usuario</button>
+                        </form>
+
+                        <!-- <form class="boton-eliminar-detalle-usuario" action="/usuarios/<%= usuario.id %>?_method=DELETE" method="POST" style="display: inline-flex;" class="boton-delete">
+                            <button type="submit" class="container-btn-detail text-center camion-compartir">Eliminar</button>
+                          </form> -->
 
                         <div class="boton-editar-detalle-usuario">
-                            <a href="/comprarProducto" class="btn btn-primary">editar</a>
+                            <a href="/user/editar/<%=usuario.id%>/" class="btn btn-primary">editar</a>
                             </div>
                         </div>
                       

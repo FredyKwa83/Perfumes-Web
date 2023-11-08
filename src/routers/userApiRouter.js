@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const userApiController = require('../controllers/userApiController');
 
+//Ruta para obtener la cantidad total de usuarios registrados
+router.get("/contador", userApiController.getTotalUsers)
+
 // Ruta para obtener todos los usuarios
 router.get('/usuarios', userApiController.getAllUsers);
 

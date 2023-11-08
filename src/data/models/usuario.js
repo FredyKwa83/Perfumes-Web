@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
           nombre: {
             type: DataTypes.STRING(50)
           },
-          apellido: {
+          Apellido: {
             type: DataTypes.STRING(50)
           },
           username: {
@@ -29,11 +29,9 @@ module.exports = (sequelize, DataTypes) => {
           password: {
             type: DataTypes.STRING(250)
           },
-          confirmPassword: {
-            type: DataTypes.STRING(250)
-          },
+         
           image: {
-            type: DataTypes.STRING(1500)
+            type: DataTypes.TEXT
           }
         }, {
           tableName: 'usuarios', // Reemplaza "nombre_de_la_tabla" por el nombre real de la tabla

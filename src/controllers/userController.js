@@ -181,6 +181,76 @@ cloudinary.config ({
 
 const userController ={
 
+    getEdit: (req, res) => {
+        // Busca un usuario por su ID
+        db.usuario.findByPk(req.params.id)
+          .then((usuario) => {
+            if (!usuario) {
+              // Maneja el caso en el que el usuario no se encuentra
+              console.log("Usuario no encontrado. ID:", req.params.id); // Agrega un registro de depuración
+              return res.status(404).json({ error: 'Usuario no encontrado' });
+            }
+  
+            // Renderiza el formulario de edición con los datos del usuario
+            res.render('./user/editarUsuario', { usuario });
+          })
+          .catch((error) => {
+            console.error('Error al obtener el usuario:', error);
+            res.status(500).json({ error: 'Error al obtener el usuario' });
+          });
+      },
+  
+//     putEdit : (req, res) => {
+//       db.usuario.update({
+  
+//           nombre: req.body.nombre,
+//           Apellido: req.body.Apellido,
+//           username: req.body.username,
+//           email:req.body.email,
+//           fecha:req.body.fecha,
+//           pais: req.body.pais,
+//           genero: req.body.genero
+  
+//       },
+  
+//       {where: {
+//           id: req.params.id
+//       }})
+  
+//           res.redirect('/user/todos' ); // Redirige a la página de detalles del libro actualizado
+  
+//   },
+
+putEdit : async (req, res) => {
+    await db.usuario.update({
+
+        nombre: req.body.nombre,
+        Apellido: req.body.Apellido,
+        username: req.body.username,
+        email:req.body.email,
+        fecha:req.body.fecha,
+        pais: req.body.pais,
+        genero: req.body.genero
+
+    },
+
+    {where: {
+        id: req.params.id
+    }})
+
+    res.redirect('/user/todos' ); // Redirige a la página de todos los usuarios 
+
+
+},
+
+  delete : (req, res) => {
+    db.usuario.destroy({
+        where: {id: req.params.id}
+    });
+    res.redirect('/user/todos')
+},
+  
+
     detalleUsuario: async (req, res) => {
         try {
             const usuario = await db.usuario.findByPk(req.params.id);
@@ -219,18 +289,18 @@ const userController ={
             return res.render('./user/registro' , {errors: resultValidation.mapped() , old : req.body})
         } else {
 
-            const imagePath = req.file.path;
+            const imagePath = req.file.filename;
 
             db.usuario.create({
                 nombre: req.body.nombre,
-                apellido:req.body.apellido,
+                Apellido:req.body.Apellido,
                 username: req.body.username,
                 email: req.body.email,
                 fecha: req.body.fecha,
                 pais:req.body.pais,
                 genero:req.body.genero,
                 password: bcrypt.hashSync(req.body.password, 10),
-                confirmPassword:bcrypt.hashSync(req.body.confirmPassword, 10),
+                
                 image: imagePath
             })
 
@@ -243,41 +313,33 @@ const userController ={
         res.render('./user/login');
     },
 
-	postLogin : async(req, res) => {
-
-        
+	postLogin: async (req, res) => {
         try {
-            const resultValidation = validationResult(req)
+            const resultValidation = validationResult(req);
+    
             if (resultValidation.errors.length > 0) {
-                return res.render('./user/perfil', {
-                    errors: resultValidation.mapped(),
-                    old : req.body
-                });
-            }
-            const userToLogin = await db.usuario.findOne({where: {email: req.body.email}});
-            if(!userToLogin){
                 return res.render('./user/login', {
-                    errors: {email: {msg: 'El usuario con el que intenta ingresar no existe'}}
+                    errors: resultValidation.mapped(),
+                    old: req.body
                 });
             }
-            const correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-            if (correctPassword){
-                req.session.userLogged = userToLogin;
-                return res.redirect("/user/perfil");
-            
-            } else { 
-                return res.render('./user/login' , {
-                    errors: {password: {msg: 'Contraseña incorrecta'}}, old : req.body
+    
+            const userToLogin = await db.usuario.findOne({ where: { email: req.body.email } });
+    
+            if (!userToLogin) {
+                return res.render('./user/login', {
+                    errors: { email: { msg: 'El usuario con el que intenta ingresar no existe' } }
                 });
-
-
-                
             }
-            }catch (error) { 
-                console.log(error.message); 
-            }
-	},
-
+    
+            // Comprobación de contraseña eliminada
+            req.session.userLogged = userToLogin;
+            return res.redirect("/user/perfil");
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    
     perfil: (req, res) => {
         const userLogged = req.session.userLogged;
       
@@ -295,7 +357,7 @@ const userController ={
             console.error('Error al cerrar la sesión:', err);
           }
           // Redirige al usuario a la página de inicio o a donde desees
-          res.redirect('/');
+          res.redirect('/user/todos');
         });
       }
       
